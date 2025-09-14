@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /private/
 
-Sitemap: https://www.erismarkets.com/sitemap.xml
+Sitemap: https://erismarkets.com/sitemap.xml

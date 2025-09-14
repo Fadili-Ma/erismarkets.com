@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://erismarkets.com/index.html" />
+    <title>About Eris Markets - Cryptocurrency Market Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, -10px) rotate(-1deg); }
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 25px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page-tagline {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            margin: 25px 0 15px;
+            color: #667eea;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .member-name {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .member-role {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .member-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 12, 41, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Eris Markets</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="terms.html" class="nav-link">Terms</a></li>
+                <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- About Page Content -->
+    <div class="container">
+        <header class="page-header">
+            <h1>About Eris Markets</h1>
+            <p class="page-tagline">We're on a mission to democratize access to cryptocurrency market data and empower investors with real-time insights and powerful analytics.</p>
+        </header>
+
+        <section class="section">
+            <h2>Our Story</h2>
+            <p>Eris Markets was founded in 2020 by a team of blockchain enthusiasts and financial technology experts who recognized the need for a more accessible, transparent, and user-friendly platform for cryptocurrency market data.</p>
+            <p>In the rapidly evolving world of digital assets, we saw that investors and traders were struggling to find reliable, real-time information presented in an intuitive way. Traditional financial platforms were slow to adapt to the unique needs of crypto markets, while existing crypto platforms often prioritized complexity over usability.</p>
+            <p>We built Eris Markets to bridge this gap—combining institutional-grade data with an interface that both beginners and experienced traders can appreciate. Today, we serve over 500,000 users worldwide who rely on our platform for accurate pricing, portfolio tracking, and market analysis.</p>
+        </section>
+
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to make cryptocurrency market data accessible, understandable, and useful for everyone—from first-time investors to institutional traders.</p>
+            <p>We believe that transparent, real-time market information is the foundation of healthy financial markets, and we're committed to providing the tools and insights that help our users make informed decisions in the dynamic world of digital assets.</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">500K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2,000+</div>
+                    <div class="stat-label">Cryptocurrencies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Real-time Data</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>What We Offer</h2>
+            <p>Eris Markets provides comprehensive cryptocurrency market data, analytics, and portfolio tracking tools designed for investors of all experience levels.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Real-Time Prices</h3>
+                    <p class="feature-desc">Get live prices for thousands of cryptocurrencies with updates every few seconds from major exchanges worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Market Analytics</h3>
+                    <p class="feature-desc">Advanced charts, technical indicators, and market metrics to help you analyze trends and make informed decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Portfolio Tracking</h3>
+                    <p class="feature-desc">Track your investments across multiple wallets and exchanges with personalized alerts and performance reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3 class="feature-title">Price Alerts</h3>
+                    <p class="feature-desc">Set custom price alerts and never miss important market movements with notifications via email or mobile.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3 class="feature-title">News & Insights</h3>
+                    <p class="feature-desc">Stay informed with curated news, analysis, and educational content from across the cryptocurrency ecosystem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Global Coverage</h3>
+                    <p class="feature-desc">Comprehensive data on global markets, exchanges, and trading pairs with support for multiple currencies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Values</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Transparency</h3>
+                    <p class="feature-desc">We believe in open, honest communication about our data sources, methodologies, and business practices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Accuracy</h3>
+                    <p class="feature-desc">We're committed to providing the most accurate, reliable market data through robust verification processes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Innovation</h3>
+                    <p class="feature-desc">We continuously evolve our platform to incorporate new technologies and meet the changing needs of our users.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Accessibility</h3>
+                    <p class="feature-desc">We strive to make cryptocurrency information understandable and useful for everyone, regardless of experience level.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Team</h2>
+            <p>Eris Markets is built by a diverse team of data scientists, software engineers, financial analysts, and blockchain experts with decades of combined experience across technology and finance.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">👨‍💼</div>
+                    <h3 class="member-name">Michael Chen</h3>
+                    <p class="member-role">CEO & Founder</p>
+                    <p class="member-desc">Former lead engineer at a major crypto exchange with 10+ years in fintech.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍🔬</div>
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-role">Chief Data Officer</p>
+                    <p class="member-desc">Data science expert with PhD in Computational Finance from Stanford.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👨‍💻</div>
+                    <h3 class="member-name">David Martinez</h3>
+                    <p class="member-role">Lead Developer</p>
+                    <p class="member-desc">Full-stack developer specializing in real-time data systems and APIs.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍🎨</div>
+                    <h3 class="member-name">Emily Wong</h3>
+                    <p class="member-role">Product Designer</p>
+                    <p class="member-desc">Award-winning designer focused on creating intuitive financial interfaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technology</h2>
+            <p>Our platform is built on a modern, scalable technology stack that ensures reliability, speed, and security:</p>
+            <ul>
+                <li><strong>Real-time Data Processing:</strong> We aggregate data from 50+ exchanges worldwide, processing over 1 million transactions per second during peak periods.</li>
+                <li><strong>Machine Learning:</strong> Our algorithms continuously monitor data quality and detect anomalies to ensure accuracy.</li>
+                <li><strong>Cloud Infrastructure:</strong> Built on distributed cloud infrastructure for maximum reliability and uptime.</li>
+                <li><strong>Security:</strong> Enterprise-grade security practices including encryption, regular audits, and strict access controls.</li>
+                <li><strong>API:</strong> Developer-friendly REST and WebSocket APIs powering thousands of applications.</li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="back-btn">← Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://erismarkets.com/index.html" />
+    <title>Terms of Service - Eris Markets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, -10px) rotate(-1deg); }
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 25px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page-tagline {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .last-updated {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .terms-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin: 40px 0 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            margin: 30px 0 15px;
+            color: #667eea;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .note {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 12, 41, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .terms-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Eris Markets</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="terms.html" class="nav-link">Terms</a></li>
+                <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Content -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Terms of Service</h1>
+            <p class="page-tagline">Please read these terms carefully before using our website and services.</p>
+            <p class="last-updated">Last Updated: January 1, 2023</p>
+        </header>
+
+        <div class="terms-content">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using Eris Markets ("the Service"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+            
+            <div class="note">
+                <p><strong>Note:</strong> We may revise these terms at any time without notice. By using this website, you agree to be bound by the then-current version of these Terms of Service.</p>
+            </div>
+
+            <h2>2. Use License</h2>
+            <p>Permission is granted to temporarily use Eris Markets for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+            <ul>
+                <li>Modify or copy the materials;</li>
+                <li>Use the materials for any commercial purpose or for any public display (commercial or non-commercial);</li>
+                <li>Attempt to reverse engineer any software contained on Eris Markets;</li>
+                <li>Remove any copyright or other proprietary notations from the materials; or</li>
+                <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+            </ul>
+            <p>This license shall automatically terminate if you violate any of these restrictions and may be terminated by Eris Markets at any time.</p>
+
+            <h2>3. Disclaimer</h2>
+            <p>The materials on Eris Markets are provided on an 'as is' basis. Eris Markets makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            <p>Further, Eris Markets does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</p>
+
+            <h2>4. Limitations</h2>
+            <p>In no event shall Eris Markets or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Eris Markets, even if Eris Markets or a Eris Markets authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+
+            <h2>5. Accuracy of Materials</h2>
+            <p>The materials appearing on Eris Markets could include technical, typographical, or photographic errors. Eris Markets does not warrant that any of the materials on its website are accurate, complete or current. Eris Markets may make changes to the materials contained on its website at any time without notice. However, Eris Markets does not make any commitment to update the materials.</p>
+
+            <h2>6. Investment Disclaimer</h2>
+            <p>The content provided on Eris Markets is for informational purposes only and should not be construed as investment advice, financial advice, trading advice, or any other sort of advice. You should not treat any of the website's content as such.</p>
+            <p>Cryptocurrency investments are volatile and high risk in nature. Don't invest more than you can afford to lose. Eris Markets does not recommend that any cryptocurrency should be bought, sold, or held by you. Do conduct your own due diligence and consult your financial advisor before making any investment decisions.</p>
+
+            <h2>7. Data Accuracy</h2>
+            <p>While we strive to provide accurate and timely information about cryptocurrency markets, the data may not always be accurate, complete or current. Price data may be delayed by several seconds or minutes according to the source. You should always verify information from multiple sources before making any investment decisions.</p>
+
+            <h2>8. Links</h2>
+            <p>Eris Markets has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Eris Markets of the site. Use of any such linked website is at the user's own risk.</p>
+
+            <h2>9. User Accounts</h2>
+            <p>When you create an account with us, you must provide us with information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
+            <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree not to disclose your password to any third party.</p>
+
+            <h2>10. Prohibited Uses</h2>
+            <p>You may use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:</p>
+            <ul>
+                <li>In any way that violates any applicable national or international law or regulation;</li>
+                <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way;</li>
+                <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent;</li>
+                <li>To impersonate or attempt to impersonate Eris Markets, an Eris Markets employee, another user, or any other person or entity;</li>
+                <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful;</li>
+                <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service.</li>
+            </ul>
+
+            <h2>11. Intellectual Property Rights</h2>
+            <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Eris Markets and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+
+            <h2>12. Termination</h2>
+            <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+            <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
+
+            <h2>13. Governing Law</h2>
+            <p>These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.</p>
+            <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+
+            <h2>14. Changes to Terms</h2>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+            <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+
+            <h2>15. Contact Information</h2>
+            <p>If you have any questions about these Terms, please contact us at:</p>
+            <p>Eris Markets Support<br>
+            Email: legal@erismarkets.com<br>
+            Address: 123 Crypto Street, Wilmington, DE 19801, United States</p>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

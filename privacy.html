@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://erismarkets.com/index.html" />
+    <title>Privacy Policy - Eris Markets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, -10px) rotate(-1deg); }
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 25px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page-tagline {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .last-updated {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .privacy-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin: 40px 0 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            margin: 30px 0 15px;
+            color: #667eea;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .note {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .data-table th {
+            background: rgba(102, 126, 234, 0.2);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 12, 41, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .privacy-content {
+                padding: 25px;
+            }
+            
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Eris Markets</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="terms.html" class="nav-link">Terms</a></li>
+                <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="page-tagline">Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.</p>
+            <p class="last-updated">Last Updated: January 1, 2023</p>
+        </header>
+
+        <div class="privacy-content">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Eris Markets ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy policy, or our practices with regards to your personal information, please contact us at privacy@erismarkets.com.</p>
+            <p>This Privacy Policy governs the privacy policies and practices of our Website, located at https://erismarkets.com. Please read our Privacy Policy carefully as it will help you make informed decisions about sharing your personal information with us.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We collect personal information that you voluntarily provide to us when you register on the Website, express an interest in obtaining information about us or our products and services, or otherwise when you contact us.</p>
+            
+            <h3>Personal Information You Provide</h3>
+            <p>We may collect the following personal information that you provide to us:</p>
+            <ul>
+                <li><strong>Account Information:</strong> When you create an account, we collect your name, email address, and password.</li>
+                <li><strong>Profile Information:</strong> If you create a profile, we may collect additional information such as your preferences, watchlists, and notification settings.</li>
+                <li><strong>Communication Data:</strong> If you contact us, we may collect information about that communication including its content and any metadata.</li>
+                <li><strong>Payment Information:</strong> If you purchase premium services, we collect payment information through our secure payment processors.</li>
+            </ul>
+            
+            <h3>Information Collected Automatically</h3>
+            <p>We automatically collect certain information when you visit, use, or navigate the Website. This information does not reveal your specific identity but may include:</p>
+            <ul>
+                <li><strong>Usage Data:</strong> Information about how you use our Website, such as the pages you view, the time spent on pages, and navigation paths.</li>
+                <li><strong>Device Information:</strong> Information about the device you use to access our Website, including IP address, browser type, operating system, and device identifiers.</li>
+                <li><strong>Location Data:</strong> We may collect information about your approximate location based on your IP address.</li>
+                <li><strong>Cookies and Similar Technologies:</strong> We use cookies and similar tracking technologies to collect information about your interactions with our Website.</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <p>We use personal information collected via our Website for a variety of business purposes described below:</p>
+            
+            <table class="data-table">
+                <tr>
+                    <th>Purpose</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>To provide our services</td>
+                    <td>To operate and maintain our Website and provide you with cryptocurrency market data and analytics</td>
+                </tr>
+                <tr>
+                    <td>To manage your account</td>
+                    <td>To create and manage your user account and provide you with customer support</td>
+                </tr>
+                <tr>
+                    <td>To communicate with you</td>
+                    <td>To send you service-related communications, respond to inquiries, and provide updates</td>
+                </tr>
+                <tr>
+                    <td>For analytics</td>
+                    <td>To analyze how you use our Website and improve our services and user experience</td>
+                </tr>
+                <tr>
+                    <td>For marketing</td>
+                    <td>To send you marketing communications about our services (with your consent where required)</td>
+                </tr>
+                <tr>
+                    <td>For security</td>
+                    <td>To detect and prevent fraud, abuse, and security incidents</td>
+                </tr>
+            </table>
+
+            <h2>4. Legal Basis for Processing</h2>
+            <p>We process your personal information based on the following legal grounds:</p>
+            <ul>
+                <li><strong>Consent:</strong> Where you have given us consent to process your personal information for specific purposes.</li>
+                <li><strong>Contract Performance:</strong> When processing is necessary to perform a contract with you.</li>
+                <li><strong>Legitimate Interests:</strong> When processing is necessary for our legitimate interests and does not override your rights and freedoms.</li>
+                <li><strong>Legal Obligation:</strong> When processing is necessary to comply with a legal obligation.</li>
+            </ul>
+
+            <h2>5. How We Share Your Information</h2>
+            <p>We may share your information in the following situations:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> We may share your data with third-party vendors, service providers, contractors, or agents who perform services for us.</li>
+                <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                <li><strong>Legal Requirements:</strong> We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process.</li>
+                <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
+            </ul>
+
+            <h2>6. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar tracking technologies to collect and use personal information about you. For more information about the cookies we use and how to manage your cookie preferences, please see our Cookie Policy.</p>
+            
+            <div class="note">
+                <p><strong>Note:</strong> You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this Website may become inaccessible or not function properly.</p>
+            </div>
+
+            <h2>7. Data Retention</h2>
+            <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+            <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize it, or if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+
+            <h2>8. Data Security</h2>
+            <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our Website is at your own risk. You should only access the services within a secure environment.</p>
+
+            <h2>9. Your Privacy Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Access:</strong> The right to request copies of your personal information.</li>
+                <li><strong>Rectification:</strong> The right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+                <li><strong>Erasure:</strong> The right to request that we erase your personal information, under certain conditions.</li>
+                <li><strong>Restrict Processing:</strong> The right to request that we restrict the processing of your personal information, under certain conditions.</li>
+                <li><strong>Object to Processing:</strong> The right to object to our processing of your personal information, under certain conditions.</li>
+                <li><strong>Data Portability:</strong> The right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+            </ul>
+            <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at privacy@erismarkets.com.</p>
+
+            <h2>10. Children's Privacy</h2>
+            <p>Our Website is not intended for children under the age of 18. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us. If we become aware that we have collected personal information from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+            <h2>11. Updates to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+            <p>Eris Markets Data Protection Officer<br>
+            Email: privacy@erismarkets.com<br>
+            Address: 123 Crypto Street, Wilmington, DE 19801, United States</p>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

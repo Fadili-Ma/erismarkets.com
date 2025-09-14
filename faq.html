@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Eris Markets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, -10px) rotate(-1deg); }
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 25px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: gradient 8s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page-tagline {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .faq-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            padding-left: 50px;
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .faq-list {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .faq-question::after {
+            content: "➕";
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "➖";
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 500px;
+        }
+
+        .contact-prompt {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-prompt h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 12, 41, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .faq-content {
+                padding: 25px;
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Eris Markets</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="terms.html" class="nav-link">Terms</a></li>
+                <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- FAQ Page Content -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Frequently Asked Questions</h1>
+            <p class="page-tagline">Find answers to common questions about Eris Markets, cryptocurrency data, and how to use our platform.</p>
+        </header>
+
+        <div class="faq-content">
+            <div class="search-box">
+                <input type="text" placeholder="Search questions..." id="faq-search">
+            </div>
+
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="general">General</button>
+                <button class="category-btn" data-category="data">Data & Accuracy</button>
+                <button class="category-btn" data-category="account">Account & Features</button>
+                <button class="category-btn" data-category="technical">Technical</button>
+            </div>
+
+            <div class="faq-list">
+                <!-- General Questions -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">What is Eris Markets?</div>
+                    <div class="faq-answer">
+                        <p>Eris Markets is a comprehensive cryptocurrency market data platform that provides real-time prices, analytics, and portfolio tracking tools for thousands of digital assets. Our mission is to make cryptocurrency data accessible and useful for everyone from beginners to experienced traders.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">Is Eris Markets free to use?</div>
+                    <div class="faq-answer">
+                        <p>Yes, our basic service is completely free and provides access to real-time prices, market data, and basic portfolio tracking. We also offer premium features for advanced users and traders who need more sophisticated tools and analytics.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">How often are prices updated?</div>
+                    <div class="faq-answer">
+                        <p>Our cryptocurrency prices are updated in real-time, with data refreshing every 30 seconds to ensure accuracy. We aggregate data from multiple reputable exchanges worldwide to provide the most accurate and timely information possible.</p>
+                    </div>
+                </div>
+
+                <!-- Data & Accuracy Questions -->
+                <div class="faq-item" data-category="data">
+                    <div class="faq-question">Where does your data come from?</div>
+                    <div class="faq-answer">
+                        <p>We aggregate data from multiple reputable cryptocurrency exchanges worldwide to provide accurate and reliable market information. Our system processes millions of data points daily, ensuring that our users receive the most comprehensive and up-to-date market information available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="data">
+                    <div class="faq-question">How accurate is your data?</div>
+                    <div class="faq-answer">
+                        <p>We strive to provide the most accurate data possible by aggregating information from multiple sources and implementing rigorous quality control measures. However, cryptocurrency markets are highly volatile and data may occasionally have slight delays. We recommend always verifying critical information from multiple sources before making investment decisions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="data">
+                    <div class="faq-question">Do you provide investment advice?</div>
+                    <div class="faq-answer">
+                        <p>No, Eris Markets provides market data and analytical tools for informational purposes only. We do not offer investment advice, financial advice, or trading recommendations. All investment decisions should be based on your own research and consultation with qualified financial advisors.</p>
+                    </div>
+                </div>
+
+                <!-- Account & Features Questions -->
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">How do I create an account?</div>
+                    <div class="faq-answer">
+                        <p>To create an account, click on the "Sign Up" button in the top right corner of our website. You'll need to provide an email address and create a password. After verifying your email, you'll have access to all basic features. For premium features, you can upgrade your account through the subscription page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">How do I set up price alerts?</div>
+                    <div class="faq-answer">
+                        <p>To set up price alerts, first create an account and log in. Then navigate to any cryptocurrency page and click the "Set Alert" button. You can choose the price threshold and how you'd like to be notified (email, push notification, or both).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">Can I track my portfolio on Eris Markets?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive portfolio tracking tools. After creating an account, you can manually add your holdings or connect your exchange accounts via read-only API keys. Our system will then track your portfolio's performance, provide analytics, and send you personalized insights.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">Do you have an API?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a comprehensive API for developers. Our API provides access to real-time and historical market data, with various subscription tiers based on your needs. You can find documentation and sign up for API access on our Developer Portal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">What browsers are supported?</div>
+                    <div class="faq-answer">
+                        <p>Eris Markets supports all modern browsers including Chrome, Firefox, Safari, and Edge. For the best experience, we recommend using the latest version of your browser. Some features may not work correctly on older browsers or mobile browsers with limited capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">Do you have a mobile app?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we have mobile apps for both iOS and Android devices. You can download them from the App Store and Google Play Store. Our mobile apps provide all the features of our web platform optimized for mobile devices, including price alerts, portfolio tracking, and real-time market data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-prompt">
+                <h3>Still have questions?</h3>
+                <p>Can't find the answer you're looking for? Our support team is here to help.</p>
+                <a href="contact.html" class="contact-btn">Contact Support</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-category');
+                
+                // Show/hide FAQ items based on category
+                faqItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('faq-search');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
