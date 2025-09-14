@@ -558,6 +558,18 @@
         </div>
 
     </div>
+	<script>
+        // Get references to the close button and the popup overlay
+        const closeButton = document.getElementById('closeDomain');
+        const popupOverlay = document.getElementById('popupOverlay');
+
+        // Add a click event listener to the close button
+        closeButton.addEventListener('click', () => {
+            // Hide the entire popup overlay when the button is clicked
+            popupOverlay.style.display = 'none';
+        });
+
+    </script>
         <!-- Navigation Menu -->
     <nav class="navbar">
         <div class="nav-container">
