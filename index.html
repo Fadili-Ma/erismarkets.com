@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="canonical" href="https://erismarkets.com/index.html" />
     <title>Eris Markets - Live Cryptocurrency Prices</title>
+
     <style>
         * {
             margin: 0;
@@ -42,7 +43,7 @@
             66% { transform: translate(20px, -10px) rotate(-1deg); }
         }
 
-   /* Navigation Styles */
+        /* Navigation Styles */
         .navbar {
             background: rgba(15, 12, 41, 0.8);
             backdrop-filter: blur(10px);
@@ -121,7 +122,6 @@
             font-size: 1.5rem;
             color: white;
         }
-
 
         .container {
             max-width: 1400px;
@@ -418,6 +418,32 @@
         }
 
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 12, 41, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
             h1 {
                 font-size: 2.5em;
             }
@@ -430,7 +456,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-		   /* The main popup container and overlay */
+		
+		    /* The main popup container and overlay */
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -533,6 +560,7 @@
             color: #333333;
         }
     </style>
+	
 </head>
 <body>
  <!-- The Popup Overlay -->
@@ -585,6 +613,22 @@
             <button class="hamburger">☰</button>
         </div>
     </nav>
+	  <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 
     <div class="container">
         <header>
